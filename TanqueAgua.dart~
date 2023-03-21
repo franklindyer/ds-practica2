@@ -1,0 +1,23 @@
+abstract class TanqueAgua {
+
+	 double _litros;
+
+	 double get litros => _litros;
+
+	 abstract String toString();
+
+}
+
+class RecolectorAgua extends TanqueAgua {
+
+      String toString() =>
+      	     "TanqueAgua tipo RecolectorAgua.";
+
+}
+
+class FuenteCiudad extends TanqueAgua {
+
+      String toString() =>
+      	     "TanqueAgua tipo FuenteCiudad";
+
+}
