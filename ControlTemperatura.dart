@@ -1,6 +1,6 @@
 import 'dart:svg';
 
-abstract class controlTemperatura{
+abstract class ControlTemperatura{
   double _temperaturaActual = 0.0;
   double _termostato = 0.0;
 

@@ -1,6 +1,6 @@
-import 'package:practica2/controlTemperatura.dart';
+import 'package:practica2/ControlTemperatura.dart';
 
-class refrigeracion extends controlTemperatura{
+class Refrigeracion extends ControlTemperatura{
 
   refrigeracion(){
     set(10,20);

@@ -1,6 +1,6 @@
-import 'package:practica2/plantador.dart';
+import 'package:practica2/Plantador.dart';
 
-class plantadorVertical extends plantador{
+class PlantadorVertical extends Plantador{
 
   plantadorVertical(){
     set(500);

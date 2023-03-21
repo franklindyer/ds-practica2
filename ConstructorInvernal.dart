@@ -1,0 +1,3 @@
+class ConstructorInvernal extends ConstructorInvernal{
+  
+}

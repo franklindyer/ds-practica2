@@ -1,8 +1,10 @@
 class EstructuraInvernadero {
 
-      bool _reforzada;
+      bool _reforzada = false;
 
-      EstructuraInvernadero(this._reforzada);
+      EstructuraInvernadero(bool reforzada){
+        this._reforzada = reforzada;
+      }
 
       @override
       String toString() {
