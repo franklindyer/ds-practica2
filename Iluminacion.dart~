@@ -1,0 +1,8 @@
+class Iluminacion {
+
+      Ilumninacion();
+
+      String toString() =>
+      	     "Soy una Ilumninación.";
+
+}
