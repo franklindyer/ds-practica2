@@ -10,16 +10,16 @@ import 'package:practica2/Plantador.dart';
 import 'package:practica2/Refrigeracion.dart';
 
 class Invernadero{
-  CondicionesInvernadero _condiciones;
-  ControlTemperatura _temperatura;
-  EstructuraInvernadero _estructura;
-  Macetero _macetero;
-  Iluminacion _iluminacion;
-  TanqueAgua _agua;
-  Plantador _plantador;
+  CondicionesInvernadero? _condiciones;
+  ControlTemperatura? _temperatura;
+  EstructuraInvernadero? _estructura;
+  Macetero? _macetero;
+  Iluminacion? _iluminacion;
+  TanqueAgua? _agua;
+  Plantador? _plantador;
 
   Invernadero(){
-    this._condiciones = new CondicionesInvernadero(25, 10, 3);
+    this._condiciones = new CondicionesInvernadero(0.0, 0.0, 0.0);
   }
 
   void setEstructura(EstructuraInvernadero estructura){
@@ -47,13 +47,13 @@ class Invernadero{
   }
 
   void infoInvernadero(){
-      _agua.toString();
-      _condiciones.toString();
-      _estructura.toString();
-      _iluminacion.toString();
-      _macetero.toString();
-      _plantador.toString();
-      _temperatura.toString();
+      print(_agua.toString());
+      print(_condiciones.toString());
+      print(_estructura.toString());
+      print(_iluminacion.toString());
+      print(_macetero.toString());
+      print(_plantador.toString());
+      print(_temperatura.toString());
   }
 
 

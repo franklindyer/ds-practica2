@@ -5,8 +5,5 @@ abstract class Plantador{
 
   set(int capacidad) => _capacidad = capacidad;
 
-  @override
-  String toString(){
-    return "La capacidad es de: $_capacidad";
-  }
+  String toString();
 }

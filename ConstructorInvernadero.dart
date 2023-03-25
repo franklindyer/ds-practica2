@@ -5,5 +5,20 @@ abstract class ConstructorInvernadero{
 
   ConstructorInvernadero(){}
 
+  void aniadeEstructura();
 
+  void aniadeIluminacion();
+
+  void aniadeMaceteros();
+
+  void aniadeTanque();
+
+  void aniadeControlTemperatura();
+
+  void aniadePlantador();
+
+  Invernadero resultado() => invernadero;
+
+  void reset() => invernadero = new Invernadero();
+  
 }

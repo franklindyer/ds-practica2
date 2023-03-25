@@ -8,7 +8,7 @@ class PlantadorHorizontal extends Plantador{
 
   @override
   String toString() {
-    return super.toString();
+    return "Plantador horizontal de capacidad $capacidad.";
   }
   
 
