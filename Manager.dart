@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:practica2/Invernadero.dart';
 import 'package:practica2/ConstructorInvEstival.dart';
 import 'package:practica2/ConstructorInvInvernal.dart';
 import 'package:practica2/ConstructorInvernadero.dart';
@@ -6,11 +6,13 @@ import 'package:practica2/Invernadero.dart';
 
 class Manager{
   List<Invernadero> _invernaderos = [];
-  ConstructorInvernadero? _constructor;
+  ConstructorInvEstival _constructorEstival = new ConstructorInvEstival();
+  ConstructorInvInvernal _constructorInvernal = new ConstructorInvInvernal();
 
   Manager(){}
 
-  Invernadero getInvernadero(int indice){
+  Invernadero? getInvernadero(int indice){
+      if (indice >= _invernaderos.length) return null;
       return _invernaderos[indice];
   }
 
@@ -19,8 +21,8 @@ class Manager{
   }
 
   Invernadero crearInvernaderoEstival(){
-    _constructor = new ConstructorInvEstival();
-    Invernadero? inv = _constructor?.getInvernadero();
+    Invernadero inv = _constructorEstival.resultado();
+    _constructorEstival.reset();
     if(inv != null){
       _invernaderos.add(inv);
     }
@@ -28,17 +30,20 @@ class Manager{
   }
 
   Invernadero crearInvernaderoInvernal(){
-   _constructor = new ConstructorInvInvernal();
-    Invernadero? inv = _constructor?.getInvernadero();
+    Invernadero inv = _constructorInvernal.resultado();
     if(inv != null){
       _invernaderos.add(inv);
     }
     return _invernaderos[_invernaderos.length - 1];
   }
 
+  void eliminarInvernadero(int indice){
+    _invernaderos.remove(indice);
+  }
+
 
   void controlarInvernaderos(){
     print("Invernadero controlado");
   }
-  
+
 }

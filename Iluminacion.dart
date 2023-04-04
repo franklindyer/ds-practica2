@@ -1,8 +1,16 @@
 class Iluminacion {
+    bool activar = false;
 
-      Iluminacion();
+      Iluminacion(bool activar){
+        this.activar = activar;
+      }
 
-      String toString() =>
-      	     "Iluminación activada";
+      String toString(){
+        if(activar){
+          return "Iluminación activada";
+        }else{
+          return "Iluminación desactivada";
+        }
+      }
 
 }

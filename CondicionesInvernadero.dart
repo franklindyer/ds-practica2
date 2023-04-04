@@ -18,6 +18,6 @@ class CondicionesInvernadero {
 
       @override
       String toString() =>
-      	     "Temperatura: $temperatura\nHumedad: $humedad\nFertilizante: $fertilizante";
+      	     "Temperatura: $temperatura  Humedad: $humedad  Fertilizante: $fertilizante";
 
 }

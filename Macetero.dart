@@ -1,8 +1,17 @@
 class Macetero {
 
-      Macetero();
+      bool activar = false;
 
-      String toString() =>
-      	     "Macetero creado.";
+      Macetero(bool activar){
+        this.activar = activar;
+      }
+
+      String toString(){
+        if(activar){
+          return "Macetero activado";
+        }else{
+          return "Macetero desactivado";
+        }
+      }
 
 }

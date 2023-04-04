@@ -10,9 +10,9 @@ class ConstructorInvEstival extends ConstructorInvernadero {
 
       void aniadeEstructura() => invernadero.setEstructura(new EstructuraInvernadero(false));
 
-      void aniadeIluminacion() => invernadero.setIluminacion(new Iluminacion());
+      void aniadeIluminacion() => invernadero.setIluminacion(new Iluminacion(false));
 
-      void aniadeMaceteros() => invernadero.setMaceteros(new Macetero());
+      void aniadeMaceteros() => invernadero.setMaceteros(new Macetero(false));
 
       void aniadeTanque() => invernadero.setTanqueAgua(new RecolectorAgua(50.0));
 

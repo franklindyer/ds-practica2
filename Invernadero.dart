@@ -18,8 +18,10 @@ class Invernadero{
   TanqueAgua? _agua;
   Plantador? _plantador;
 
+  CondicionesInvernadero? get condiciones => _condiciones;
+
   Invernadero(){
-    this._condiciones = new CondicionesInvernadero(0.0, 0.0, 0.0);
+    _condiciones = new CondicionesInvernadero(20,3,2);
   }
 
   void setEstructura(EstructuraInvernadero estructura){
@@ -46,14 +48,16 @@ class Invernadero{
     this._plantador = plantador;
   }
 
-  void infoInvernadero(){
-      print(_agua.toString());
-      print(_condiciones.toString());
-      print(_estructura.toString());
-      print(_iluminacion.toString());
-      print(_macetero.toString());
-      print(_plantador.toString());
-      print(_temperatura.toString());
+  String infoInvernadero(){
+      return '''
+        ${_agua.toString()}\n
+        ${_condiciones.toString()}\n
+        ${_estructura.toString()}\n
+        ${_iluminacion.toString()}\n
+        ${_macetero.toString()}\n
+        ${_plantador.toString()}\n
+        ${_temperatura.toString()}
+        ''';
   }
 
 
