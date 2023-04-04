@@ -5,6 +5,10 @@ abstract class ConstructorInvernadero{
 
   ConstructorInvernadero(){}
 
+  Invernadero getInvernadero(){
+    return invernadero;
+  }
+
   void aniadeEstructura();
 
   void aniadeIluminacion();
