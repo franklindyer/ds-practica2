@@ -153,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           children: new List.from(listaBotonesInvernaderos())..addAll(<Widget>[
-            
+            const Text("Pulse el invernadero para gestionarlo"),
             ElevatedButton(
               onPressed: () {
                 _crearInvernaderoInvernal();
