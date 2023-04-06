@@ -38,7 +38,7 @@ class Manager{
   }
 
   void eliminarInvernadero(int indice){
-    _invernaderos.remove(indice);
+    _invernaderos.remove(_invernaderos.elementAt(indice));
   }
 
 

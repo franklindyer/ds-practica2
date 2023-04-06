@@ -88,6 +88,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _eliminarInvernadero(int indice) {
+    setState(() {
+      managerInvernaderos.eliminarInvernadero(indice);
+    });
+  }
+
   // Problema posible:
   //  Podría ser ineficiente general la lista de botones de nuevo cada vez.
   //  Por otro lado, si se mantiene una lista de botones, será difícil mantener la consistencia
@@ -98,17 +104,22 @@ class _MyHomePageState extends State<MyHomePage> {
     for (int i = 0; i < managerInvernaderos.getNumInvernaderos(); i++) {
       Invernadero invernadero = managerInvernaderos.getInvernadero(i) ?? Invernadero(); // Si el resultado es null, crea un nuevo objeto Invernadero
       botones.add(ElevatedButton(
-              onPressed: () {
-                  Navigator.push(
+              onPressed: () async {
+                  final value = await Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => InvernaderoInfo(
                         invernadero: invernadero,
                         id: i,
-                        manager: managerInvernaderos,
+                        manager: managerInvernaderos
                       ),
                     ),
                   );
+                  if (value != null) {
+                    setState(() {
+                      _eliminarInvernadero(value);
+                    });
+                  }
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.blue[100],
@@ -188,13 +199,6 @@ class InvernaderoInfo extends StatefulWidget {
 }
 
 class _InvernaderoInfoState extends State<InvernaderoInfo> {
-  void _eliminarInvernadero() {
-    setState(() {
-      Manager manager = Manager();
-      manager.eliminarInvernadero(widget.id);
-      Navigator.popUntil(context, ModalRoute.withName(Navigator.defaultRouteName));
-    });
-  }
 
   void _incrementarFertilizante(){
     setState(() {
@@ -451,10 +455,11 @@ class _InvernaderoInfoState extends State<InvernaderoInfo> {
              ElevatedButton(
               onPressed: () {
                 setState(() {
-                  // Elimina el invernadero de la lista
-                  widget.manager.eliminarInvernadero(widget.id);
-                  // Vuelve a la pantalla principal
-                  Navigator.pop(context);
+                  // Pasa como el valor opcional del "resultado" de .pop el índice del invernadero a borrar.
+                  // Me parece una solución poca extensible, pero en el caso de querer habilitar más comunicación
+                  //   entre las distintas páginas de la aplicación, se podría pasar un objeto más complejo en
+                  //   esta posición.
+                  Navigator.pop(context, widget.id);
                 });
               },
               child: Text('Eliminar Invernadero'),
